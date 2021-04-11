@@ -17,7 +17,10 @@ columns = []
 diff_tmp = 0.0
 diff_closest = 0.0
 
-with open('test.csv', newline='') as csvfile:
+print("filename:")
+file_name = str(input())
+
+with open(file_name, newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
 
     # Extracts columns out of the rows
@@ -76,7 +79,6 @@ for column_index in range(8):
     if column_index < 6:
         diff_tmp += damerau_levenshtein_distance(columns[2].split(','), columns[column_index + 3].split(',')) /6
     # * Fourth Column
-
     if column_index < 5:
         diff_tmp += damerau_levenshtein_distance(columns[3].split(','), columns[column_index + 4].split(',')) /5
     # * Fifth Column
