@@ -68,20 +68,36 @@ columns.append(','.join(tenth))
 
 for column_index in range(8):
     # * First Column
-    diff_tmp += damerau_levenshtein_distance(columns[0].split(','), columns[column_index + 1].split(',')) 
+    diff_tmp += damerau_levenshtein_distance(columns[0].split(','), columns[column_index + 1].split(',')) / 8
     # * Second Column
-    print(column_index)
     if column_index < 7:
-        diff_tmp += damerau_levenshtein_distance(columns[1].split(','), columns[column_index + 2].split(','))
+        diff_tmp += damerau_levenshtein_distance(columns[1].split(','), columns[column_index + 2].split(',')) / 7
+    # * Third Column
     if column_index < 6:
-        diff_tmp += damerau_levenshtein_distance(columns[2].split(','), columns[column_index + 3].split(',')) 
+        diff_tmp += damerau_levenshtein_distance(columns[2].split(','), columns[column_index + 3].split(',')) /6
+    # * Fourth Column
+
+    if column_index < 5:
+        diff_tmp += damerau_levenshtein_distance(columns[3].split(','), columns[column_index + 4].split(',')) /5
+    # * Fifth Column
+    if column_index < 4:
+        diff_tmp += damerau_levenshtein_distance(columns[4].split(','), columns[column_index + 5].split(',')) /4
+    # * Sixth Column
+    if column_index < 3:
+        diff_tmp += damerau_levenshtein_distance(columns[5].split(','), columns[column_index + 6].split(',')) /3
+    # * Seventh Column
+    if column_index < 2:
+        diff_tmp += damerau_levenshtein_distance(columns[6].split(','), columns[column_index + 7].split(',')) /2
+    # * Eighth Column
+    if column_index < 1:
+        diff_tmp += damerau_levenshtein_distance(columns[7].split(','), columns[column_index + 8].split(',')) /1
+
  
 
 
-
 # * Results
+diff_closest += (diff_tmp / 8)
 
-diff_closest += (diff_tmp / 9)
 print('diff temp: ', diff_tmp)
 print('diff closest', diff_closest)
 
