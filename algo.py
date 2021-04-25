@@ -38,19 +38,6 @@ with open(file_name + '.csv', newline='') as csvfile:
         ninth.append(transformed_row[8])
         tenth.append(transformed_row[9])
 
-        # print(row, '||||')
-
-# print(second)
-second.pop(0)
-third.pop(0)
-fourth.pop(0)
-fifth.pop(0)
-sixth.pop(0)
-seventh.pop(0)
-eigth.pop(0)
-ninth.pop(0)
-tenth.pop(0)
-
 
 columns.append(','.join(second))
 columns.append(','.join(third))
